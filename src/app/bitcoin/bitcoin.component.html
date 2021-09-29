@@ -1,0 +1,23 @@
+<div class="container-fluid">
+
+  <h2>BitCoin:</h2>
+
+  <p>Os valores do BitCoin são atualizados a cada minuto.</p>
+  <div class="timer">Tempo da aplicação: <span *ngIf="timer.getbCount() > 0" > {{timer.getbCount()}}m</span> {{timer.getaCount()}}s</div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Data / Hora</th>
+        <th>| USD |</th>
+        <th>| BRL |</th>
+      </tr>
+    </thead>
+    <tr *ngFor= "let response of this.BitcoinService.updateList">
+      <td>{{response.time.updated}}</td>
+      <td>{{response.bpi.USD.rate}}</td>
+      <td>{{response.bpi.BRL.rate}}</td>
+    </tr>
+  </table>
+
+</div>

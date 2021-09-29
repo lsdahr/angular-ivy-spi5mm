@@ -1,0 +1,32 @@
+<nav class="navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/']">{{name}}</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/bitcoin']">BitCoin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/wallet']">Wallet</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<hr>
+
+<div *ngIf="BitcoinService.getNotify() == 'abaixou'" class="notify">
+
+  O Bitcoin acaba de <b>cair</b> de valor! &nbsp;<img src="https://i.ibb.co/qBW3Z9r/down-32.png" class="abaixou">
+
+</div>
+
+
+<div *ngIf="BitcoinService.getNotify() == 'subiu'" class="notify">
+
+  O Bitcoin acaba de <b>subir</b> de valor! &nbsp;<img src="https://i.ibb.co/1vDd9zz/up-32.png" class="subiu">
+
+</div>

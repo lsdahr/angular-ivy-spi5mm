@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <h2>Carteira:</h2>
+  <p><b>Faça sua simulação abaixo:</b>
+  <br>Informe abaixo o valor do BitCoin:</p>
+  <div class="data">
+  <input type="number" [(ngModel)] = "qtdBitcoin"><br>
+  <br><button type ="button" (click)="comprar()">COMPRAR</button> |
+  <button type="button" (click)="vender()">VENDER</button>
+  
+  <br><br>
+
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Bitcoin</th>
+          <th> | Valor em R$ | </th>
+          <th>Valor em USD</th>
+        <tr>
+      </thead>
+      <tr>
+        <td>{{getBitCoin()}}</td>    
+        <td>{{getReal()}}</td>   
+        <td>{{getUsd()}}</td>   
+      </tr>
+    </table>
+  </div>
+          
